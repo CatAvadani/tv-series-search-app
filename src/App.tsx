@@ -1,9 +1,11 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <h1>TV Series Search App </h1>
+      <img src='logo.png' alt='logo' className='logo' />
+      <Outlet />
     </div>
   );
 }
