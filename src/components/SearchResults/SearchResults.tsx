@@ -19,7 +19,9 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
               alt={result.show.name}
             />
             <h2>{result.show.name}</h2>
-            {getStars(result.show.rating.average)}
+            <div className={styles.stars}>
+              {getStars(result.show.rating.average)}
+            </div>
           </Link>
         </div>
       ))}

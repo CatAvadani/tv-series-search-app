@@ -42,6 +42,10 @@
   margin: 5px 0;
 }
 
+.stars {
+  color: gold;
+}
+
 a {
   color: white;
   text-decoration: none;
