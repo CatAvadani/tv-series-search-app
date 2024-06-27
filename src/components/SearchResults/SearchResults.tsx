@@ -1,16 +1,30 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { SearchResult } from '../../data';
+import { getStars } from '../../utils/utils';
+import styles from './SearchResults.module.css';
 
 interface SearchResultsProps {
   results: SearchResult[];
 }
-const SearchResults = ({ results }: SearchResultsProps) => {
+
+const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
   return (
-    <div>
-      <ul>
-        {results.map((result) => (
-          <li key={result.show.id}>{result.show.name}</li>
-        ))}
-      </ul>
+    <div className={styles.searchResults}>
+      {results.map((result) => (
+        <div key={result.show.id} className={styles.searchResult}>
+          <Link to={`/shows/${result.show.id}`}>
+            <img
+              src={result.show.image?.medium || 'placeholder-image-url'}
+              alt={result.show.name}
+            />
+            <h2>{result.show.name}</h2>
+            <div className={styles.stars}>
+              {getStars(result.show.rating.average)}
+            </div>
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };

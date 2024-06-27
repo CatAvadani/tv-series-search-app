@@ -7,3 +7,13 @@ export const searchShows = async (query: string) => {
   }
   return response.json();
 };
+
+export const getShowDetails = async (id: string) => {
+  const showResponse = await fetch(`${API_BASE_URL}/shows/${id}`);
+  const show = await showResponse.json();
+
+  const castResponse = await fetch(`${API_BASE_URL}/shows/${id}/cast`);
+  const cast = await castResponse.json();
+
+  return { show, cast };
+};

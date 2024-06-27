@@ -15,23 +15,28 @@
 }
 
 .searchInput {
-  padding: 10px;
+  padding: 0.5rem;
   border: none;
   flex: 1;
-  max-width: 40rem;
+  height: 2rem;
+  width: 100%;
   font-size: 1rem;
   outline: none;
 }
-
+.searchInput::placeholder {
+  color: #000;
+  opacity: 0.5;
+  font-style: oblique;
+}
 .searchButton {
-  padding: 0.5rem 1rem;
-  margin: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.5rem;
   border: none;
   border-radius: 0.2rem;
   background-color: #00a496;
   color: white;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .searchButton:hover {
@@ -41,6 +46,14 @@
 
 @media (min-width: 768px) {
   .searchContainer {
-    gap: 10rem;
+    gap: 20rem;
+  }
+  .searchInput {
+    height: 2.5rem;
+    font-size: 1.3rem;
+  }
+
+  .searchButton {
+    font-size: 1.3rem;
   }
 }
