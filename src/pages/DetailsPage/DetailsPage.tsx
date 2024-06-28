@@ -47,6 +47,7 @@ const DetailsPage: React.FC = () => {
 
   return (
     <div className={styles.detailsPage}>
+      <img src='/public/logo.png' alt='TV Maze Logo' className={styles.logo} />
       <Link to='/' className={styles.backLink}>
         <BiArrowBack /> Back to search results
       </Link>
@@ -56,34 +57,44 @@ const DetailsPage: React.FC = () => {
           alt={show.name}
           className={styles.showImage}
         />
-        <div className={styles.showInfo}>
-          <h1>{show.name}</h1>
-          <div className={styles.stars}>
-            {show.rating?.average ? getStars(show.rating.average) : 'No rating'}
-          </div>
-          <p>
-            <strong>Genres:</strong> {show.genres.join(', ')}
-          </p>
-          <p dangerouslySetInnerHTML={{ __html: show.summary }}></p>
-        </div>
-      </div>
-      <h2>Cast</h2>
-      <div className={styles.castList}>
-        {cast.map((member) => (
-          <div key={member.person.id} className={styles.castMember}>
-            <div className='imgContainer'>
-              <img
-                src={
-                  member.person.image?.medium || '/public/placeholderImg.png'
-                }
-                alt={member.person.name}
-              />
+        <div className={styles.castContainer}>
+          <div className={styles.showInfo}>
+            <h1>{show.name}</h1>
+            <div className={styles.stars}>
+              {show.rating?.average
+                ? getStars(show.rating.average)
+                : 'No rating'}
             </div>
             <p>
-              {member.person.name} as {member.character.name}
+              <strong>Genres:</strong> {show.genres.join(', ')}
             </p>
+            <p dangerouslySetInnerHTML={{ __html: show.summary }}></p>
           </div>
-        ))}
+          <h2>Cast</h2>
+          <div className={styles.castList}>
+            {cast.map((member) => (
+              <div key={member.person.id} className={styles.castMember}>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={
+                      member.person.image?.medium ||
+                      '/public/placeholderImg.png'
+                    }
+                    alt={member.person.name}
+                  />
+                </div>
+                <div className={styles.castMemberInfo}>
+                  <p>
+                    <strong>{member.person.name}</strong>
+                  </p>
+                  <p className={styles.characterName}>
+                    as {member.character.name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
