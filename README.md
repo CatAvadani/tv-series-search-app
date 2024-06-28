@@ -1,30 +1,50 @@
-# React + TypeScript + Vite
+# TV Series Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based web application that allows users to search for TV shows and view detailed information about them. The application uses the TVMaze API to fetch show details and cast information.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can view the live demo of the application [here](https://tv-series-search-app.vercel.app/).
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Search for TV shows by name
+- View detailed information about a selected TV show
+- See the cast of the TV show
+- Responsive design for both desktop and mobile
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Clone the repository:
+    
+       git clone https://github.com/CatAvadani/tv-series-search-app.git
+  
+2. Navigate to the project directory:
+   
+       cd tv-series-search-app
+   
+3. Install dependencies:
+   
+       npm install
+  
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+1. Start the development server:
+
+        npm start
+    
+2. Open your browser and navigate to:
+   
+        http://localhost:3000
+
+
+## Future Improvements and Features
+
+
+- **User Authentication:** Allow users to create accounts, log in, and save their favorite shows.
+- **Season and Episode Information:** Provide detailed information about each season and episode of a show.
+- **Watchlist Feature:** Allow users to add shows to a watchlist and track their progress through different episodes and seasons.
+- **End-to-End (E2E) Tests:** Test the application flow using Cypress.
+
+
