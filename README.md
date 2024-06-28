@@ -32,11 +32,9 @@ You can view the live demo of the application [here](https://tv-series-search-ap
 
 1. Start the development server:
 
-        npm start
+        npm run dev
     
-2. Open your browser and navigate to:
-   
-        http://localhost:3000
+
 
 
 ## Future Improvements and Features
