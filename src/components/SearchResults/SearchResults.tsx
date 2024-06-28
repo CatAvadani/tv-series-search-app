@@ -14,10 +14,12 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
       {results.map((result) => (
         <div key={result.show.id} className={styles.searchResult}>
           <Link to={`/shows/${result.show.id}`}>
-            <img
-              src={result.show.image?.medium || 'placeholder-image-url'}
-              alt={result.show.name}
-            />
+            <div className={styles.imageWrapper}>
+              <img
+                src={result.show.image?.medium || 'placeholderImg.png'}
+                alt={result.show.name}
+              />
+            </div>
             <h2>{result.show.name}</h2>
             <div className={styles.stars}>
               {getStars(result.show.rating.average)}

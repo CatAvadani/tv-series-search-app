@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SearchResults from '../../components/SearchResults/SearchResults';
 import { SearchResult } from '../../data';
-import { searchShows } from '../../utils/requests';
+import { searchShows } from '../../data/requests';
 import styles from './HomePage.module.css';
 
 const HomePage: React.FC = () => {
