@@ -8,7 +8,7 @@ export const searchShows = async (query: string) => {
   return response.json();
 };
 
-export const getShowDetails = async (id: string) => {
+export const getShowDetails = async (id: number) => {
   const showResponse = await fetch(`${API_BASE_URL}/shows/${id}`);
   const show = await showResponse.json();
 

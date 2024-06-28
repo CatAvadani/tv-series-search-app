@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import { Link, useParams } from 'react-router-dom';
 import { Show } from '../../data';
-import { getShowDetails } from '../../utils/requests';
+import { getShowDetails } from '../../data/requests';
 import { getStars } from '../../utils/utils';
 import styles from './DetailsPage.module.css';
 
@@ -20,7 +20,7 @@ interface CastMember {
 }
 
 const DetailsPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const [show, setShow] = useState<Show | null>(null);
   const [cast, setCast] = useState<CastMember[]>([]);
   const [loading, setLoading] = useState(true);
@@ -28,7 +28,7 @@ const DetailsPage: React.FC = () => {
   useEffect(() => {
     const fetchShowDetails = async () => {
       setLoading(true);
-      const showDetails = await getShowDetails(id);
+      const showDetails = await getShowDetails(Number(id));
       setShow(showDetails.show);
       setCast(showDetails.cast);
       setLoading(false);
@@ -52,7 +52,7 @@ const DetailsPage: React.FC = () => {
       </Link>
       <div className={styles.header}>
         <img
-          src={show.image?.medium || 'placeholder-image-url'}
+          src={show.image?.medium || '/public/placeholderImg.png'}
           alt={show.name}
           className={styles.showImage}
         />
@@ -73,7 +73,9 @@ const DetailsPage: React.FC = () => {
           <div key={member.person.id} className={styles.castMember}>
             <div className='imgContainer'>
               <img
-                src={member.person.image?.medium || 'placeholder-image-url'}
+                src={
+                  member.person.image?.medium || '/public/placeholderImg.png'
+                }
                 alt={member.person.name}
               />
             </div>
