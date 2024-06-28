@@ -31,7 +31,9 @@ const HomePage: React.FC = () => {
         }`}
       >
         <img src='logo.png' alt='TV Maze Logo' className={styles.logo} />
-        <SearchBar onSearch={handleSearch} />
+        <div className={styles.searchBarContainer}>
+          <SearchBar onSearch={handleSearch} />
+        </div>
       </div>
       {loading && <p>Loading...</p>}
       {error && <p className={styles.error}>{error}</p>}
