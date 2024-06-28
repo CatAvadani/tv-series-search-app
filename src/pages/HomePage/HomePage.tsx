@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SearchResults from '../../components/SearchResults/SearchResults';
 import { SearchResult } from '../../data';
@@ -35,7 +36,7 @@ const HomePage: React.FC = () => {
           <SearchBar onSearch={handleSearch} />
         </div>
       </div>
-      {loading && <p>Loading...</p>}
+      {loading && <LoadingSpinner />}
       {error && <p className={styles.error}>{error}</p>}
       {results.length > 0 && <SearchResults results={results} />}
     </div>
