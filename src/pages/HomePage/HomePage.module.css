@@ -11,6 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .logo {
@@ -35,5 +37,6 @@
   .resultsHeader .logo {
     margin: 1rem;
     margin-top: 2rem;
+    height: 2rem;
   }
 }

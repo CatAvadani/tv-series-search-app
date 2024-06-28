@@ -47,7 +47,13 @@ const DetailsPage: React.FC = () => {
 
   return (
     <div className={styles.detailsPage}>
-      <img src='/public/logo.png' alt='TV Maze Logo' className={styles.logo} />
+      <div className={styles.logoContainer}>
+        <img
+          src='/public/logo.png'
+          alt='TV Maze Logo'
+          className={styles.logo}
+        />
+      </div>
       <Link to='/' className={styles.backLink}>
         <BiArrowBack /> Back to search results
       </Link>
