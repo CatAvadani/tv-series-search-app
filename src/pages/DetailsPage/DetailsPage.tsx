@@ -48,18 +48,14 @@ const DetailsPage: React.FC = () => {
   return (
     <div className={styles.detailsPage}>
       <div className={styles.logoContainer}>
-        <img
-          src='/public/logo.png'
-          alt='TV Maze Logo'
-          className={styles.logo}
-        />
+        <img src='/logo.png' alt='TV Maze Logo' className={styles.logo} />
       </div>
       <Link to='/' className={styles.backLink}>
         <BiArrowBack /> Back to search results
       </Link>
       <div className={styles.header}>
         <img
-          src={show.image?.medium || '/public/placeholderImg.png'}
+          src={show.image?.medium || '/placeholderImg.png'}
           alt={show.name}
           className={styles.showImage}
         />

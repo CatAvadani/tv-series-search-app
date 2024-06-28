@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
           results.length > 0 ? styles.resultsHeader : ''
         }`}
       >
-        <img src='logo.png' alt='TV Maze Logo' className={styles.logo} />
+        <img src='/logo.png' alt='TV Maze Logo' className={styles.logo} />
         <div className={styles.searchBarContainer}>
           <SearchBar onSearch={handleSearch} />
         </div>
